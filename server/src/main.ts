@@ -147,6 +147,24 @@ app.post("/contacts",
     }
 );
 
+app.put("/contacts/:id",
+    async (inRequest: Request, inResponse: Response) => {
+        console.log("PUT /contacts", inRequest.body);
+        try {
+            const contactsWorker: Contacts.Worker = new Contacts.Worker();
+            const numReplaced : number = await contactsWorker.
+                updateContact(inRequest.params.id, inRequest.body);
+            console.log("PUT /contacts: Ok", numReplaced);
+            inResponse.json({numReplaced : numReplaced});
+        } catch (inError) {
+            console.log("PUT /contacts: Error", inError);
+            // inResponse.send("error");
+            inResponse.sendStatus(500);
+        }
+    }
+);
+
+
 app.delete("/contacts/:id",
     async (inRequest: Request, inResponse: Response) => {
         console.log("DELETE /contacts", inRequest.body);
