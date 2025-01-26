@@ -5,7 +5,7 @@
         "secureConnection": false, 
         "auth": {
             "user": "chsemen202412@gmail.com",
-            "pass": "krfu erwo xybt epxs"
+            "pass": ""
         }
     },
     "imap": {
@@ -13,7 +13,7 @@
         "port": 995,
         "auth": {
             "user": "chsemen202412@gmail.com",
-            "pass": "krfu erwo xybt epxs"
+            "pass": ""
         }
     }
 }
