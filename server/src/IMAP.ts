@@ -33,7 +33,7 @@ export class Worker {
             {
                 auth: Worker.serverInfo.imap.auth,
                 // useSecureTransport: true,
-                // requireTLS: true,
+                requireTLS: true,
                 // id: { name: "MyBag", version: "1" }
             }
 
