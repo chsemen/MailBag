@@ -1,4 +1,6 @@
 const ImapClient = require("emailjs-imap-client");
+//import ImapClient from "emailjs-imap-client";
+// import ic from 'emailjs-imap-client'
 import { ParsedMail } from "mailparser";
 import { simpleParser } from "mailparser";
 import { IServerInfo } from "./ServerInfo";
@@ -28,9 +30,16 @@ export class Worker {
         const client: any = new ImapClient.default(
             Worker.serverInfo.imap.host,
             Worker.serverInfo.imap.port,
-            { auth: Worker.serverInfo.imap.auth }
+            {
+                auth: Worker.serverInfo.imap.auth,
+                // useSecureTransport: true,
+                // requireTLS: true,
+                // id: { name: "MyBag", version: "1" }
+            }
+
         );
-        client.logLevel = client.LOG_LEVEL_NONE;
+        // client.logLevel = client.LOG_LEVEL_NONE;
+        client.logLevel = client.LOG_LEVEL_ALL;
         client.onerror = (inError: Error) => {
             console.log(
                 "IMAP.Worker.listMailboxes(): Connection error",

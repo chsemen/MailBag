@@ -1,18 +1,19 @@
 {
     "smtp": {
-        "host": "mail.mydomain.com",
-        "port": 999,
+        "host": "smtp.gmail.com",
+        "port": 587,
+        "secureConnection": false, 
         "auth": {
-            "user": "user@domain.com",
-            "pass": "xxx"
+            "user": "chsemen202412@gmail.com",
+            "pass": "krfu erwo xybt epxs"
         }
     },
     "imap": {
-        "host": "mail.mydomain.com",
-        "port": 999,
+        "host": "pop.gmail.com",
+        "port": 995,
         "auth": {
-            "user": "user@domain.com",
-            "pass": "xxx"
+            "user": "chsemen202412@gmail.com",
+            "pass": "krfu erwo xybt epxs"
         }
     }
 }
