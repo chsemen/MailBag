@@ -43,11 +43,17 @@ app.get("/mailboxes",
 
 app.get("/mailboxes/:mailbox",
     async (inRequest: Request, inResponse: Response) => {
+        //var s = `"${inRequest.params.mailbox}"`        
+        // var s = inRequest.params.mailbox;        
         console.log("GET /mailboxes (2)", inRequest.params.mailbox);
+        //console.log(`GET /mailboxes (2) ${s}`);
+        // s = "[Gmail]/Trash";
+        // console.log(`GET /mailboxes (2) ${s}|`);
         try {
             const imapWorker: IMAP.Worker = new IMAP.Worker(serverInfo);
             const messages: IMAP.IMessage[] = await imapWorker.listMessages({
                 mailbox: inRequest.params.mailbox
+                // mailbox: s
             });
             console.log("GET /mailboxes (2): Ok", messages);
             inResponse.json(messages);

@@ -23,6 +23,12 @@ print(r.status_code)
 j=r.json()
 print(j)
 
+u='http://localhost/mailboxes/[GMAIL]%2FTrash'
+print(u)
+r=requests.get(u)
+print(r.status_code)
+j=r.json()
+print(j)
 
 
 
