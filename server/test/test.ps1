@@ -29,3 +29,5 @@ $id
 curl -inFile "newContact2.json" -Headers @{"Content-Type"="application/json"} -method PUT localhost/contacts/$id
 curl -method DELETE localhost/contacts/$id
 curl localhost/contacts
+
+curl localhost/mailboxes/%5BGmail%5D%2FTrash
